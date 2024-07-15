@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    private int attack;
     bool canDamaged=false;
     public GameObject bullet;
     public float bulletForce;
-    private Animator animator;
-    public EnemyData enemyData;
     public float rangedAttackDistance = 5f;
     float rangedAttackTimer = 0f;
     public float rangedAttackInterval = 3f;
-    int expAmount;
     public RangedState rangedState;
     public enum RangedState
     {
@@ -23,12 +19,8 @@ public class RangedEnemy : Enemy
     }
     private void Awake()
     {
-        expAmount = enemyData.exp;
-        currentHealth = enemyData.health;
-        attack = enemyData.attack;
-        healthBar.SetMaxHealth(currentHealth);
+        base.Awake();
         rangedState = RangedState.Idle;
-        animator = GetComponent<Animator>();
 
     }
     void Update()

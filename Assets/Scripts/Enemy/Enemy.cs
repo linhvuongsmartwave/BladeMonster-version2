@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using DG.Tweening;
+using System.Collections.Generic;
 
-public class Enemy : Singleton<Enemy>
+public class Enemy : MonoBehaviour
 {
     int minCoins = 1;
     int maxCoins = 3;
@@ -11,8 +12,23 @@ public class Enemy : Singleton<Enemy>
     public GameObject prefabCoins;
     public Transform playerTransform;
     public HealthBar healthBar;
+    public Animator animator;
+    public int expAmount;
+    public EnemyData enemyData;
+    public int attack;
 
-    private void Start()
+
+    public void Awake()
+    {
+        expAmount = enemyData.exp;
+        currentHealth = enemyData.health;
+        attack = enemyData.attack;
+        healthBar.SetMaxHealth(currentHealth);
+        animator = GetComponent<Animator>();
+
+    }
+
+    public void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag(Const.player).transform;
         player = GameObject.FindObjectOfType<Player>();
@@ -28,7 +44,7 @@ public class Enemy : Singleton<Enemy>
         StartCoroutine(MoveBack());
     }
 
-    private IEnumerator MoveBack()
+    public IEnumerator MoveBack()
     {
         float elapsedTime = 0f;
         float duration = 0.5f;
@@ -52,7 +68,7 @@ public class Enemy : Singleton<Enemy>
         SpawmCoins();
     }
 
-    void SpawmCoins()
+    public void SpawmCoins()
     {
         int numCoins = Random.Range(minCoins, maxCoins + 1);
         for (int i = 0; i < numCoins; i++)

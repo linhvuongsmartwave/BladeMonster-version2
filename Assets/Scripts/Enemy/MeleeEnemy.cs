@@ -6,11 +6,7 @@ public class MeleeEnemy : Enemy
 {
     public float moveSpeed = 1f;
     public float meleeAttackDistance = 1f;
-    private Animator animator;
     private bool canAttack = false;
-    private int attack;
-    public EnemyData enemyData;
-    int expAmount;
 
 
     public MeleeState meleeState;
@@ -22,14 +18,10 @@ public class MeleeEnemy : Enemy
         Damaged
     }
 
-    private void Awake()
+    public void Awake()
     {
-        expAmount = enemyData.exp;
-        currentHealth = enemyData.health;
-        attack = enemyData.attack;
-        healthBar.SetMaxHealth(currentHealth);
+        base.Awake();
         meleeState = MeleeState.Idle;
-        animator = GetComponent<Animator>();
 
     }
 
