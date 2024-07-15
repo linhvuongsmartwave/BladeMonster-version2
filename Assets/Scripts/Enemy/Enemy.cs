@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     public void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag(Const.player).transform;
-        player = GameObject.FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
     }
 
     public void NewPos(Vector2 newPos)
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         transform.DOMove(newPos, 0.3f).SetEase(Ease.Linear);
     }
 
-    public virtual void Move()
+    public  void Move()
     {
         StartCoroutine(MoveBack());
     }
@@ -90,7 +90,6 @@ public class Enemy : MonoBehaviour
     public  void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        Debug.Log("amount: "+ amount);
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
