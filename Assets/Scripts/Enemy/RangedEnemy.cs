@@ -31,8 +31,7 @@ public class RangedEnemy : Enemy
         healthBar.SetMaxHealth(currentHealth);
         rangedState = RangedState.Idle;
         animator = GetComponent<Animator>();
-        playerTransform = GameObject.FindGameObjectWithTag(Const.player).transform;
-        player = GameObject.FindObjectOfType<Player>();
+
     }
     void Update()
     {

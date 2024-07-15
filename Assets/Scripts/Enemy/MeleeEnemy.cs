@@ -6,8 +6,7 @@ public class MeleeEnemy : Enemy
 {
     public HealthBar healthBar;
 
-    //private Transform playerTransform;
-    //private Player player;
+
     public float moveSpeed = 1f;
     public float meleeAttackDistance = 1f;
     private Animator animator;
@@ -34,8 +33,7 @@ public class MeleeEnemy : Enemy
         healthBar.SetMaxHealth(currentHealth);
         meleeState = MeleeState.Idle;
         animator = GetComponent<Animator>();
-        playerTransform = GameObject.FindGameObjectWithTag(Const.player).transform;
-        player = GameObject.FindObjectOfType<Player>();
+
     }
 
     void Update()
