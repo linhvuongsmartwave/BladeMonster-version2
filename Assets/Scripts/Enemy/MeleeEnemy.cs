@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public HealthBar healthBar;
-
-
     public float moveSpeed = 1f;
     public float meleeAttackDistance = 1f;
     private Animator animator;

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    public HealthBar healthBar;
-
     private int attack;
     bool canDamaged=false;
     public GameObject bullet;

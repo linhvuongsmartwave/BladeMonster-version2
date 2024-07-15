@@ -10,6 +10,7 @@ public class Enemy : Singleton<Enemy>
     public int currentHealth;
     public GameObject prefabCoins;
     public Transform playerTransform;
+    public HealthBar healthBar;
 
     private void Start()
     {
