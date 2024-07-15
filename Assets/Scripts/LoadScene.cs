@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    public SceneFader sceneFader;
     public void QuitGame()
     {
         Application.Quit();
@@ -12,7 +13,8 @@ public class LoadScene : MonoBehaviour
     public void LoadHomeScene()
     {
         AudioManager.Instance.PlaySfx(SoundName.SfxButton);
-        SceneManager.LoadScene(Const.homeScene);
+        sceneFader.FadeTo("HomeScene");
+        //SceneManager.LoadScene(Const.homeScene);
     }
 
     public void LoadMainMenu()
@@ -24,7 +26,9 @@ public class LoadScene : MonoBehaviour
     public void LoadSceneLevel1()
     {
         AudioManager.Instance.PlaySfx(SoundName.SfxButton);
-        SceneManager.LoadScene(Const.level1);
+        sceneFader.FadeTo("Level1");
+
+        //SceneManager.LoadScene(Const.level1);
     }
 
     public void LoadSceneLevel2()
