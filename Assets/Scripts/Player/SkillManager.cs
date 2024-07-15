@@ -24,9 +24,5 @@ public class SkillManager : MonoBehaviour
         player.SkillShield();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

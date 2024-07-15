@@ -13,6 +13,7 @@ public class EnemySpawn : MonoBehaviour
     public int numberSpawn = 2;
     public float min;
     public float max;
+    
 
     void Start()
     {

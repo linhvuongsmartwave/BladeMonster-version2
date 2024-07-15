@@ -17,7 +17,7 @@ public class RangedEnemy : Enemy
         Attack,
         Damaged
     }
-    private void Awake()
+    public void Awake()
     {
         base.Awake();
         rangedState = RangedState.Idle;
@@ -25,7 +25,7 @@ public class RangedEnemy : Enemy
     }
     void Update()
     {
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
 
         CheckRangedState();
         CheckDistancePlayer();
@@ -64,21 +64,6 @@ public class RangedEnemy : Enemy
                 RangedAttack();
                 break;
         }
-    }
-
-    public override void TakeDamage(int amount)
-    {
-        base.TakeDamage(amount);
-        if (currentHealth <= 0)
-        {
-            healthBar.gameObject.SetActive(false);
-            Die();
-        }
-    }
-    public override void Die()
-    {
-        base.Die();
-        ExpManager.Instance.AddExp(expAmount);
     }
     #region RangedState
     void RangedIdle()
@@ -121,10 +106,5 @@ public class RangedEnemy : Enemy
             RangedDamaged();
             Move();
         }
-    }
-
-    public override void Move()
-    {
-        base.Move();
     }
 }

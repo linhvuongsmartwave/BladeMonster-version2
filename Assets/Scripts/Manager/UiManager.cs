@@ -18,11 +18,12 @@ public class UiManager : MonoBehaviour
     private void Start()
     {
             characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        avtCharacter.GetComponent<Image>().sprite = avataCharacterSprites[characterIndex];
+
 
     }
     private void Update()
     {
-            avtCharacter.GetComponent<Image>().sprite = avataCharacterSprites[characterIndex];
 
     }
     public void PanelFadeIn()

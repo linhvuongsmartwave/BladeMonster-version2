@@ -27,7 +27,7 @@ public class MeleeEnemy : Enemy
 
     void Update()
     {
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
         CheckMeleeState();
         CheckDistancePlayer();
     }
@@ -50,20 +50,7 @@ public class MeleeEnemy : Enemy
                 break;
         }
     }
-    public override void TakeDamage(int amount)
-    {
-        base.TakeDamage(amount);
-        if (currentHealth<=0)
-        {
-            healthBar.gameObject.SetActive(false);
-            Die();
-        }
-    }
-    public override void Die()
-    {
-       base.Die();
-        ExpManager.Instance.AddExp(expAmount);
-    }
+ 
     #region MeleeState
     void MeleeIdle()
     {
@@ -76,7 +63,6 @@ public class MeleeEnemy : Enemy
     void MeleeDamaged()
     {
         animator.SetTrigger(Const.meleeDamaged);
-
 
     }
     void MeleeAttack()
@@ -116,9 +102,5 @@ public class MeleeEnemy : Enemy
             Move();
 
         }
-    }
-    public override void Move()
-    {
-        base.Move();
     }
 }
