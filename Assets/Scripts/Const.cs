@@ -33,7 +33,7 @@ public class Const : MonoBehaviour
     public const string level5 = "Level5";
     public const string mainMenu = "MainMenu ";
 
-    public const string coin = "Coin";
+    public const string coin = "Gold";
 
     public const string Scene_StartGame = "StartGame";
     public const string Tag_Player = "Player";

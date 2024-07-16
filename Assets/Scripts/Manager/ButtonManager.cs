@@ -20,7 +20,7 @@ public class ButtonManager : MonoBehaviour
     }
     private void Update()
     {
-        txtCoins.text = GameManager.Instance.coin.ToString();
+        txtCoins.text = GameManager.Instance.gold.ToString();
 
     }
 

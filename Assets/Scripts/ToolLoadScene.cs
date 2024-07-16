@@ -21,7 +21,7 @@ public class ToolLoadScene : MonoBehaviour
     [MenuItem("Open Scene/GamePlay &3")]
     public static void OpenSceneGamePlay()
     {
-        OpenScene("Level1");
+        OpenScene("GamePlay");
     }
     [MenuItem("Open Scene/Tool &4")]
     public static void OpenSceneTool()

@@ -26,9 +26,8 @@ public class LoadScene : MonoBehaviour
     public void LoadSceneLevel1()
     {
         AudioManager.Instance.PlaySfx(SoundName.SfxButton);
-        sceneFader.FadeTo("Level1");
+        sceneFader.FadeTo("GamePlay");
 
-        //SceneManager.LoadScene(Const.level1);
     }
 
     public void LoadSceneLevel2()

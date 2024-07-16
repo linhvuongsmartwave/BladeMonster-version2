@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Coin Data", menuName = "Coin Data")]
+[CreateAssetMenu(fileName = "New Gold Data", menuName = "Gold Data")]
 
 public class CoinData : ScriptableObject
 {

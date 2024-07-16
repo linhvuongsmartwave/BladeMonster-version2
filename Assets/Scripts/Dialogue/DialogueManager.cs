@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         Loading.Instance.LoadingClose();
         Invoke("PanelUi",1f);
-        GameManager.Instance.SaveCoin();
+        GameManager.Instance.SaveGold();
     }
     public void PanelUi()
     {

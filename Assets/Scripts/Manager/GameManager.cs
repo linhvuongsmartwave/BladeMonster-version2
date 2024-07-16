@@ -3,33 +3,31 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public int coin;
-    //public CoinData coinData;
+    public int gold;
 
-    private const string Coin = "Coin";
+    private const string Gold = "Gold";
 
 
     private void Start()
     {
-        LoadCoin();
-        //coinData.coin = coin;
+        LoadGold();
     }
 
     private void Update()
     {
     }
 
-    public void SaveCoin()
+    public void SaveGold()
     {
-        PlayerPrefs.SetInt(Coin, coin);
+        PlayerPrefs.SetInt(Gold, gold);
         PlayerPrefs.Save();
     }
 
-    public void LoadCoin()
+    public void LoadGold()
     {
-        if (PlayerPrefs.HasKey(Coin))
+        if (PlayerPrefs.HasKey(Gold))
         {
-            coin = PlayerPrefs.GetInt(Coin);
+            gold = PlayerPrefs.GetInt(Gold);
         }
     }
 }

@@ -441,8 +441,8 @@ public class Player : MonoBehaviour
                     .SetEase(Ease.OutQuad)
                     .OnComplete(() =>
                     {
-                        GameManager.Instance.coin += 10;
-                        GameManager.Instance.SaveCoin();
+                        GameManager.Instance.gold += 10;
+                        GameManager.Instance.SaveGold();
                         Destroy(coin);
                     });
             });

@@ -48,10 +48,10 @@ public class HomeSceneManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx(SoundName.SfxButton);
         int priceCharacter = 2000; 
-        if (GameManager.Instance.coin >= priceCharacter)
+        if (GameManager.Instance.gold >= priceCharacter)
         {
-            GameManager.Instance.coin -= priceCharacter;
-            GameManager.Instance.SaveCoin();
+            GameManager.Instance.gold -= priceCharacter;
+            GameManager.Instance.SaveGold();
             PlayerPrefs.SetInt("Character_" + (characterIndex) + "_Bought", 1);
             buttons[characterIndex].SetActive(false); 
         }

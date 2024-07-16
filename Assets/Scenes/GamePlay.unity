@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!95 &579959961
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1862,8 +1862,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &579959962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2858,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1195736049}
+    - target: {fileID: 86321232342331948, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSceneLevel1
+      objectReference: {fileID: 0}
     - target: {fileID: 86321233103890086, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3736,7 +3739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d175436b9b4725947b843dcd84ffc155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFader: {fileID: 0}
+  sceneFader: {fileID: 1812629346}
 --- !u!4 &1195736050
 Transform:
   m_ObjectHideFlags: 0
@@ -5360,6 +5363,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1812629345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4497506
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.396599
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 54.181595
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831610880654584145, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588668374545496991, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+      propertyPath: m_Name
+      value: SceneFader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+--- !u!114 &1812629346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8765882343938391460, guid: efbf8e63b354ae648815d7eeb441b1ed, type: 3}
+  m_PrefabInstance: {fileID: 1812629345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8396b4d2b513a4648ac20540cae4584c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865433806
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,7 +5672,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1958401939
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5618,8 +5689,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1958401940
 MonoBehaviour:
   m_ObjectHideFlags: 0
