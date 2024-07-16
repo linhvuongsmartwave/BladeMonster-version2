@@ -18,7 +18,7 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Const.player).transform;
-        SpawnEnemies();
+        EnemiesSpawn();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class EnemySpawn : MonoBehaviour
         if (listEnemySpawn.Count == 0) Chief();
     }
 
-    void SpawnEnemies()
+    void EnemiesSpawn()
     {
         for (int i = 0; i < numberSpawn; i++)
         {

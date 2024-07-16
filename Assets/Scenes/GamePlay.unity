@@ -2643,7 +2643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5b18a980efb30498dc2e2a93d9da9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: 0
+  gold: 0
 --- !u!4 &792591949
 Transform:
   m_ObjectHideFlags: 0
@@ -2851,8 +2851,24 @@ PrefabInstance:
       value: 747.86
       objectReference: {fileID: 0}
     - target: {fileID: 86321232257673468, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 86321232257673468, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 86321232257673468, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 86321232257673468, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 86321232257673468, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 86321232342331948, guid: 6cceb3b8b1178b54890ee21e2707ae9e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     #endregion
     [Header("MOVEMENT")]
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float disBack = 1f;
+    [SerializeField] private float disBack = 2f;
     [SerializeField] private float distanceAttack;
     [SerializeField] private float distanceMoveBack = 2f;
 
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         CoolDownSkill2();
         CoolDownSkill3();
         expBar.SetHealth(currentExp);
-        CheckDistanceNormalAttack();
+        CheckNormalAttack();
         healthBar.SetHealth(currentHealth);
         level.text = currentLevel.ToString();
         txtCurrentHeal.text = currentHealth.ToString();
@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
     }
     #endregion
     #region skill_1
-    public void SkillAttackState()
+    public void SkillAttack()
     {
         canTriggerDamagedState = false;
         isClick1 = true;
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
     private IEnumerator AttackCoolDown()
     {
         isAttack = true;
-        animator.SetTrigger(Const.animSkillAttack);
+        animator.SetBool("isSkillAttack",true);
         yield return new WaitForSeconds(timeCoolDownAttack);
         isAttack = false;
     }
@@ -293,19 +293,19 @@ public class Player : MonoBehaviour
         switch (playerState)
         {
             case PlayerState.Idle:
-                IdleState();
+                Idle();
                 break;
             case PlayerState.Moving:
-                MovingState();
+                Moving();
                 break;
             case PlayerState.SkillAttack:
-                SkillAttackState();
+                SkillAttack();
                 break;
             case PlayerState.Damaged:
-                DamagedState();
+                Damaged();
                 break;
             case PlayerState.NormalAttack:
-                NormalAttackState();
+                NormalAttack();
                 break;
             case PlayerState.Die:
                 Die();
@@ -313,7 +313,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void CheckDistanceNormalAttack()
+    private void CheckNormalAttack()
     {
         float minDistance = float.MaxValue;
         for (int i = 0; i < enemySpawn.listEnemySpawn.Count; i++)
@@ -327,38 +327,38 @@ public class Player : MonoBehaviour
         if (minDistance <= distanceAttack && !hasAttacked)
         {
             hasAttacked = true;
-            NormalAttackState();
+            NormalAttack();
         }
         else if (minDistance > distanceAttack) hasAttacked = false;
         if (minDistance <= distanceMoveBack && !hasMoveBack)
         {
             hasMoveBack = true;
-            DamagedState();
+            Damaged();
         }
         else if (minDistance > distanceMoveBack) hasMoveBack = false;
     }
     #region FUNC-STATE
-    void IdleState()
+    void Idle()
     {
         animator.SetTrigger(Const.animIdle);
-        Debug.Log("IdleState");
+        Debug.Log("Idle");
     }
 
-    void MovingState()
+    void Moving()
     {
         animator.SetTrigger(Const.animMove);
         if (canMove) Move();
         canMoveBack = true;
     }
 
-    void NormalAttackState()
+    void NormalAttack()
     {
         AudioManager.Instance.PlaySfx(SoundName.SfxNormalAttack);
         animator.SetTrigger(Const.animNormalAttack);
         playerState = PlayerState.Moving;
     }
 
-    public void DamagedState()
+    public void Damaged()
     {
         if (canTriggerDamagedState && canMoveBack && !isMoveBack && !Shielding)
         {
@@ -371,11 +371,11 @@ public class Player : MonoBehaviour
     #endregion
     private void MoveBack()
     {
-        animator.SetTrigger(Const.animDamaged);
-        Vector2 newPosition = (Vector2)transform.position - (Vector2)transform.right * disBack;
+        animator.SetBool("isDamaged",true);
+        Vector2 newPosition = (Vector2)transform.position - (Vector2)transform.right * 3f;
         isMoveBack = true;
         canMove = false;
-        transform.DOMove(newPosition, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
+        transform.DOMove(newPosition, 0.4f).SetEase(Ease.Linear).OnComplete(() =>
         {
             canMove = true;
             isMoveBack = false;
@@ -428,7 +428,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Const.coin)) PickUpCoin(collision.gameObject);
+        if (collision.gameObject.CompareTag(Const.gold)) PickUpCoin(collision.gameObject);
     }
 
     private void PickUpCoin(GameObject coin)

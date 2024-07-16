@@ -13,7 +13,7 @@ public class SkillManager : MonoBehaviour
 
     public void Skill1()
     {
-        player.SkillAttackState();
+        player.SkillAttack();
     }
     public void Skill3()
     {

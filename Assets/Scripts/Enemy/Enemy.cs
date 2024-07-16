@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour
     public IEnumerator MoveBack()
     {
         float elapsedTime = 0f;
-        float duration = 0.5f;
+        float duration = 0.4f;
         Vector2 initialPosition = transform.position;
-        Vector2 newPosition = (Vector2)transform.position + (Vector2)transform.right * 2f;
+        Vector2 newPosition = (Vector2)transform.position + (Vector2)transform.right * 3f;
         while (elapsedTime < duration)
         {
             transform.position = Vector2.Lerp(initialPosition, newPosition, elapsedTime / duration);
@@ -65,12 +65,12 @@ public class Enemy : MonoBehaviour
         Vector2 targetPosition = new Vector2(transform.position.x + 20f, transform.position.y + 10f);
         transform.DOMove(targetPosition, duration).SetEase(Ease.Linear).OnComplete(() => Destroy(gameObject));
         transform.DORotate(new Vector3(0, 0, 360), 0.3f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-        SpawmCoins();
+        SpawmGolds();
         ExpManager.Instance.AddExp(expAmount);
 
     }
 
-    public void SpawmCoins()
+    public void SpawmGolds()
     {
         int numCoins = Random.Range(minCoins, maxCoins + 1);
         for (int i = 0; i < numCoins; i++)
