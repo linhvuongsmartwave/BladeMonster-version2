@@ -9,11 +9,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
     public Animator animator;
-    private UiManager uiManager;
+    private Ui uiManager;
     private void Awake()
     {
         sentences = new Queue<string>();
-        uiManager=GameObject.Find("PanelStageComplete").GetComponent<UiManager>();
+        uiManager=GameObject.Find("PanelStageComplete").GetComponent<Ui>();
     }
 
     public void StartDial(Dialogue dial)
@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         Loading.Instance.LoadingClose();
         Invoke("PanelUi",1f);
-        GameManager.Instance.SaveGold();
+        Gold.Instance.SaveGold();
     }
     public void PanelUi()
     {

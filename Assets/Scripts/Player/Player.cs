@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     private DialogueTrigger dialogueTrigger;
     private TextMeshProUGUI txtMaxHeal;
     private TextMeshProUGUI txtCurrentHeal;
-    private UiManager uiManager;
+    private Ui uiManager;
     #region ENUM-STATE
     private PlayerState playerState;
     public enum PlayerState
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         enemySpawn = GameObject.Find("SpawnEnemy").GetComponent<EnemySpawn>();
         healthBar = GameObject.Find("HealthBarPlayer").GetComponent<HealthBar>();
         txtMaxHeal = GameObject.Find("txtMaxheal").GetComponent<TextMeshProUGUI>();
-        uiManager = GameObject.Find("PanelStageComplete").GetComponent<UiManager>();
+        uiManager = GameObject.Find("PanelStageComplete").GetComponent<Ui>();
         txtCurrentHeal = GameObject.Find("txtCurrentHeal").GetComponent<TextMeshProUGUI>();
         dialogueTrigger = GameObject.Find("DialogueBox").GetComponent<DialogueTrigger>();
     }
@@ -441,8 +441,8 @@ public class Player : MonoBehaviour
                     .SetEase(Ease.OutQuad)
                     .OnComplete(() =>
                     {
-                        GameManager.Instance.gold += 10;
-                        GameManager.Instance.SaveGold();
+                        Gold.Instance.gold += 10;
+                        Gold.Instance.SaveGold();
                         Destroy(coin);
                     });
             });
