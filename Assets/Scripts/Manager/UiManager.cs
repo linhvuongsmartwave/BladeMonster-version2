@@ -11,14 +11,14 @@ public class UiManager : MonoBehaviour
     public RectTransform rectTransform;
 
     public Sprite[] avataCharacterSprites;
-    public GameObject avtCharacter;
+    //public GameObject avtCharacter;
     int characterIndex;
     public List<GameObject> items=new List<GameObject>();
 
     private void Start()
     {
             characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
-        avtCharacter.GetComponent<Image>().sprite = avataCharacterSprites[characterIndex];
+        //avtCharacter.GetComponent<Image>().sprite = avataCharacterSprites[characterIndex];
 
 
     }

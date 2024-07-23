@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
     private IEnumerator AttackCoolDown()
     {
         isAttack = true;
-        animator.SetBool("isSkillAttack",true);
+        animator.SetTrigger("isSkillAttack");
         yield return new WaitForSeconds(timeCoolDownAttack);
         isAttack = false;
     }
@@ -371,7 +371,7 @@ public class Player : MonoBehaviour
     #endregion
     private void MoveBack()
     {
-        animator.SetBool("isDamaged",true);
+        animator.SetTrigger("isDamaged");
         Vector2 newPosition = (Vector2)transform.position - (Vector2)transform.right * 3f;
         isMoveBack = true;
         canMove = false;
