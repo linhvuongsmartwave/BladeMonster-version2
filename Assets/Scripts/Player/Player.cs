@@ -428,7 +428,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Const.gold)) PickUpCoin(collision.gameObject);
+        if (collision.gameObject.CompareTag("Gold")) PickUpCoin(collision.gameObject);
     }
 
     private void PickUpCoin(GameObject coin)
