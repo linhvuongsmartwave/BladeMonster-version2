@@ -9382,8 +9382,6 @@ MonoBehaviour:
   canvasGroup: {fileID: 1642104959}
   rectTransform: {fileID: 1642104957}
   avataCharacterSprites: []
-  avtCharacter: {fileID: 0}
-  items: []
 --- !u!225 &1642104959
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11930,12 +11928,15 @@ MonoBehaviour:
   canvasGroup: {fileID: 86321233231931746}
   rectTransform: {fileID: 86321233231931745}
   avataCharacterSprites: []
+<<<<<<< Updated upstream
   avtCharacter: {fileID: 0}
   items:
   - {fileID: 86321233328947770}
   - {fileID: 1710680472}
   - {fileID: 515615786}
   - {fileID: 485837136}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &86321233231931758
 GameObject:
   m_ObjectHideFlags: 0
