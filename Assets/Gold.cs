@@ -15,7 +15,6 @@ public class Gold : Singleton<Gold>
 
     private void Update()
     {
-        Debug.Log("GOld: " + gold);
     }
 
     public void SaveGold()
