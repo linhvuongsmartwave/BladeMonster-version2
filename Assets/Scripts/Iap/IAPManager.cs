@@ -12,14 +12,14 @@ using TMPro;
 public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
     private List<ItemIAP> listItems = new List<ItemIAP>();
     public TextMeshProUGUI txtNoPackage;
-    const string PACK_1 = "com.forestwardens.pack1";
-    const string PACK_2 = "com.forestwardens.pack2";
-    const string PACK_3 = "com.forestwardens.pack3";
-    const string PACK_4 = "com.forestwardens.pack4";
-    const string PACK_5 = "com.forestwardens.pack5";
-    const string PACK_6 = "com.forestwardens.pack6";
-    const string PACK_7 = "com.forestwardens.pack7";
-    const string PACK_8 = "com.forestwardens.pack8";
+    const string PACK_1 = "com.blademonster_v2.pack1";
+    const string PACK_2 = "com.blademonster_v2.pack2";
+    const string PACK_3 = "com.blademonster_v2.pack3";
+    const string PACK_4 = "com.blademonster_v2.pack4";
+    const string PACK_5 = "com.blademonster_v2.pack5";
+    const string PACK_6 = "com.blademonster_v2.pack6";
+    const string PACK_7 = "com.blademonster_v2.pack7";
+    const string PACK_8 = "com.blademonster_v2.pack8";
 
     IStoreController m_StoreController;
     int numberHint;
@@ -79,7 +79,6 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
 
     public void OnInitializeFailed(InitializationFailureReason error) {
         Debug.Log("false");
-
     }
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs purchaseEvent) {
@@ -118,22 +117,7 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions) {
         Debug.Log("Init purchase success!");
         List<int> ListPosPack = new List<int>();
-        // if ListPosPack.Count > 0 clear list
-        if (ListPosPack.Count > 0) {
-            ListPosPack.Clear();
-        }
-
-
         m_StoreController = controller;
-        /*        foreach (var item in listItems)
-                {
-                    Product product = m_StoreController.products.WithID(item.id);
-                    if (product != null && product.metadata != null)
-                    {
-                        Debug.Log($"Product ID: {item.id} - Price: {product.metadata.localizedPriceString}");
-                        item.price = product.metadata.localizedPriceString;
-                    }
-                }*/
         for (int i = 0; i < listItems.Count; i++) {
             Product product = m_StoreController.products.WithID(listItems[i].id);
             if (product != null && product.metadata != null) {
@@ -146,9 +130,14 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
         }
         if (ListPosPack.Count == 0)
         {
-            txtNoPackage.gameObject.SetActive(true);
+            Debug.Log("ListPosPack.Count == 0");
+        }
+        else
+        {
+            Debug.Log("ListPosPack.Count !== 0");
         }
         ShopManager.Instance.SetLayoutItemIAP(listItems, ListPosPack);
+        txtNoPackage.gameObject.SetActive(false);
     }
 
     public void OnInitializeFailed(InitializationFailureReason error, string message) {

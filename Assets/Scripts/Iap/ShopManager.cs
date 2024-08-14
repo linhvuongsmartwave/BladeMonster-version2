@@ -36,6 +36,11 @@ public class ShopManager :Singleton<ShopManager>
     public void SetLayoutItemIAP(List<ItemIAP> listItems, List<int> listPosPack)
     {
         Debug.Log("SetLayoutItemIAP");
+        if (listPosPack.Count == 0)
+        {
+            Debug.Log("ListPosPack.Count == 0");
+
+        }
         for (int i = 0; i < listItems.Count; i++)
         {
             ShopItemUI shopItemUI = Instantiate(shopItemPf, transformSpawn).GetComponent<ShopItemUI>();
