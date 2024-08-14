@@ -128,14 +128,7 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
             }
 
         }
-        if (ListPosPack.Count == 0)
-        {
-            Debug.Log("ListPosPack.Count == 0");
-        }
-        else
-        {
-            Debug.Log("ListPosPack.Count !== 0");
-        }
+
         ShopManager.Instance.SetLayoutItemIAP(listItems, ListPosPack);
         txtNoPackage.gameObject.SetActive(false);
     }
