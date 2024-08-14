@@ -23,6 +23,7 @@ public class HomeSceneManager : MonoBehaviour
         isBought = true;
         characterSelect = FindObjectOfType<CharacterSelect>();
         expBar.SetMaxHealth(playerData.maxExp);
+        IAPManager.Instance.txtNoPackage.gameObject.SetActive(false);
     }
 
     private void Update()

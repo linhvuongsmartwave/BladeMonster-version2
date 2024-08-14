@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Purchasing;
 using System;
 using UnityEngine.Purchasing.Extension;
+using TMPro;
 
 
 
@@ -10,7 +11,7 @@ using UnityEngine.Purchasing.Extension;
 
 public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
     private List<ItemIAP> listItems = new List<ItemIAP>();
-
+    public TextMeshProUGUI txtNoPackage;
     const string PACK_1 = "com.forestwardens.pack1";
     const string PACK_2 = "com.forestwardens.pack2";
     const string PACK_3 = "com.forestwardens.pack3";
@@ -141,6 +142,11 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener {
                 ListPosPack.Add(i + 1);
 
             }
+
+        }
+        if (ListPosPack.Count == 0)
+        {
+            txtNoPackage.gameObject.SetActive(true);
         }
         ShopManager.Instance.SetLayoutItemIAP(listItems, ListPosPack);
     }
